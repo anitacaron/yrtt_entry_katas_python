@@ -6,4 +6,19 @@
 # Good luck!
 
 def repeats(arr):
-    return
+	dict_arr = dict()
+	sum_unique = 0
+
+	# count the occurrence of numbers using a dict
+	for n in arr:
+		if dict_arr.get(n) != None:
+			dict_arr[n] += 1
+		else:
+			dict_arr[n] = 1
+
+	# sum the numbers that occur once
+	for key, item in dict_arr.items():
+		if item == 1:
+			sum_unique += key
+
+	return sum_unique

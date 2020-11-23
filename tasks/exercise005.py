@@ -19,4 +19,19 @@
 # wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 
 def wave(people):
-    return
+	n_people = len(people)
+	wave = []
+
+	for p in range(n_people):
+		# transform word(s) in list to facilitate manipulation
+		new_people = list(people)
+
+		# if the character in the string is whitespace then pass over
+		if new_people[p] == " ":
+			pass
+		else:
+			new_people[p] = new_people[p].upper()
+
+			wave.append(''.join(new_people))
+
+	return wave
